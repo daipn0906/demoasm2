@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <title>toy-store-edit </title>
+    <style>
+        body {
+            background-color: burlywood;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            background-size: 100% 100%;
+        }
+
+        header {
+
+            padding: 30px;
+            text-align: center;
+            font-size: 35px;
+            color: red;
+        }
+
+        article {
+            float: center;
+            padding: 20px;
+            width: 100%;
+            text-align: center;
+            font-size: 20px;
+            color: green;
+        }
+
+    </style>
+</head>
+
+<body>
+    <header>
+        <h1>CHANGE THE INFORMATION</h1>
+    </header>
+    <article>
+        <table width=100%>
+            <form action="edit" method="POST">
+                <input type="hidden" name="id" value="{{toy._id}}">
+                <tr>
+
+
+                    <td> Name :<input type="text" name="name" value="{{toy.ToyName}}"></td>
+                </tr>
+                <br>
+                <tr>
+
+                    <td> Type :<input type="text" name="type" id="" value="{{toy.type}}"></td>
+                </tr>
+                <br>
+                <tr>
+
+
+                    <td>Price : <input type="text" name="price" id="" value="{{toy.price}}"></td>
+                      <p style="color:white">{{error}}</p>
+                </tr>
+                <td><input type="submit" value="Update"></td>
+                
+            </form>
+            
+        </table>
+        <button><a href="/toy">cancel</a></button>
+    </article>
+
+</body>
+
+</html>
