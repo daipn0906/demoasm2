@@ -23,9 +23,6 @@ router.post('/insert', async (req, res) => {
     let name = req.body.ToyName;
     let type = req.body.type;
     let price = req.body.price;
-    if(price > 200){
-        res.render('insertToy', {error: "Price must be < 200"});
-    }
     let newtoy = {
         
             ToyName: name,
