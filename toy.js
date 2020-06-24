@@ -37,6 +37,7 @@ router.post('/insert', async (req, res) => {
 
     let results = await dbo.collection("product").find({}).toArray();
     res.render('allToy', { toy: results });
+    res.redirect("/toy");
 })
 
 
@@ -72,6 +73,7 @@ router.post('/edit', async (req, res) => {
     //
     let results = await dbo.collection("product").find({}).toArray();
     res.render('allToy', { toy: results });
+    res.redirect("/toy");
 })
 
 ///------------------------------------Delete Toy------------------------------------
@@ -113,6 +115,7 @@ router.post('/search', async (req, res) => {
     let dbo = client.db("toystore");
     let results = await dbo.collection("product").find({ "ToyName": searchtoy }).toArray();
     res.render('allToy', { toy: results });
+    res.redirect("/toy");
 })
 //--------------------------------Limit PRICE----------------------------
 
